@@ -17,7 +17,7 @@ export default function AddUserScreen() {
         name, age: parseInt(age, 10),
       });
 
-      Alert.alert('Успішно', 'Користувач доданий');
+      Alert.alert('Успішно', `Користувача "${name}" додано`);
       setName('');
       setAge('');
     } catch (error) {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
-import {UserService} from '../src/service/user.service.ts';
+import { UserService } from '../src/service/user.service.ts';
 
 export default function DeleteUserScreen() {
   const [id, setId] = useState('');
@@ -16,7 +16,7 @@ export default function DeleteUserScreen() {
       Alert.alert('Успішно', `Користувача з ID ${id} видалено`);
       setId('');
     } catch (error) {
-      Alert.alert('Помилка', 'Не вдалося видалити користувача');
+      Alert.alert('Помилка', `Не вдалося видалити користувача з ID ${id}`);
     }
   };
 

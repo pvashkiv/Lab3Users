@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
-import {UserService} from '../src/service/user.service.ts';
+import { UserService } from '../src/service/user.service.ts';
 
 export default function UpdateUserScreen() {
   const [id, setId] = useState('');
@@ -19,22 +19,39 @@ export default function UpdateUserScreen() {
         age: parseInt(age, 10),
       });
 
+      Alert.alert('Успішно', `Користувача з ID ${id} оновлено`);
+
       setId('');
       setName('');
       setAge('');
-
-      Alert.alert('Успішно', 'Користувача оновлено');
     } catch (error) {
-      Alert.alert('Помилка', 'Не вдалося оновити');
+      Alert.alert('Помилка', `Не вдалося оновити користувача з ID ${id}`);
     }
   };
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Оновити користувача</Text>
-      <TextInput placeholder="ID користувача" keyboardType="numeric" style={styles.input} value={id} onChangeText={setId} />
-      <TextInput placeholder="Нове ім’я" style={styles.input} value={name} onChangeText={setName} />
-      <TextInput placeholder="Новий вік" keyboardType="numeric" style={styles.input} value={age} onChangeText={setAge} />
+      <TextInput
+        placeholder="ID користувача"
+        keyboardType="numeric"
+        style={styles.input}
+        value={id}
+        onChangeText={setId}
+      />
+      <TextInput
+        placeholder="Нове ім’я"
+        style={styles.input}
+        value={name}
+        onChangeText={setName}
+      />
+      <TextInput
+        placeholder="Новий вік"
+        keyboardType="numeric"
+        style={styles.input}
+        value={age}
+        onChangeText={setAge}
+      />
       <Button title="Оновити" onPress={handleUpdate} />
     </View>
   );

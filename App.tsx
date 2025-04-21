@@ -19,15 +19,12 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Users" component={UsersScreen} />
-          <Stack.Screen name="AddUser" component={AddUserScreen} />
-          <Stack.Screen name="UpdateUser" component={UpdateUserScreen} />
-          <Stack.Screen name="DeleteUser" component={DeleteUserScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Users" component={UsersScreen} />
+        <Stack.Screen name="AddUser" component={AddUserScreen} />
+        <Stack.Screen name="UpdateUser" component={UpdateUserScreen} />
+        <Stack.Screen name="DeleteUser" component={DeleteUserScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-
-
